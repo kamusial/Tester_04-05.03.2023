@@ -9,6 +9,15 @@ while True:
     except ValueError:
         print('zle dane, jeszcze raz')
 
-liczba_dzieci = int(input('Ile masz dzieci? '))
+while True:
+    liczba_dzieci = input('Ile masz dzieci? ')
+    try:
+        liczba_dzieci = int(liczba_dzieci)
+        break
+    except ValueError:
+        print('zle dane, jeszcze raz')
 
-print('kasa na osobę =',wyplata / (liczba_dzieci+2))
+try:
+    print('kasa na dziecko =',wyplata / liczba_dzieci)
+except ZeroDivisionError:
+    print('cała kasa dla ciebie')
