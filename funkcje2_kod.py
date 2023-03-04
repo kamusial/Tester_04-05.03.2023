@@ -22,5 +22,22 @@ def stan_zdrowia(waga = 65, wzrost = 1.8):
         return 2
     return 3
 
+def input_to_number(input):
+    try:
+        input = int(input)
+        return input
+    except:
+        try:
+            input = float(input)
+            return input
+        except:
+            return False
+def can_be_int(number):
+    try:
+        number = int(number)
+        return True
+    except:
+        return False
+
 
 
