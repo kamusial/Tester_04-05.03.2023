@@ -13,5 +13,13 @@ page.enter_password('secret_sauce')
 time.sleep(0.5)
 page.click_login()
 time.sleep(0.5)
-make_screenshot(driver)
-driver.quit()
+
+try:
+    assert driver.current_url == 'https://www.saucedemo.com/inventory.html', make_screenshot(driver)
+except AssertionError:
+    print('Assercja nie przeszla')
+else:
+    print('Assercja przeszla')
+finally:
+    print('po asercji')
+    driver.quit()

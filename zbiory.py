@@ -57,3 +57,7 @@ if len(krzyki.intersection(centrum)) != 0:
 # lista = [1, 2, 3, 3, 3, 4, 4, 4, 5]
 # lista = list(set(lista))
 # print(lista)
+pozaNFZ = chorzy_rok.union(chorzy_miesiac.union(krzyki.union(centrum))).difference(NFZ)
+if len(pozaNFZ) != 0:
+    print(pozaNFZ)
+    NFZ = NFZ.union(pozaNFZ)
